@@ -197,9 +197,9 @@ let financieroButton = document.getElementById("financiero");
 let externoButton = document.getElementById("externo");
 let graficoSector = document.getElementById("covid_sector");
 
-let realPath = "./img/recuperacion_real.png";
-let financieroPath = "./img/recuperacion_financiero.png";
-let externoPath = "./img/recuperacion_externo.png";
+let realPath = "https://raw.githubusercontent.com/encuestas-macro/procesamiento_eoe_eem/master/informes/eem/07_julio/img/recuperacion_real.png?token=AP7VAT4OIJTKMHF75FZQ7PS7EODSU";
+let financieroPath = "https://raw.githubusercontent.com/encuestas-macro/procesamiento_eoe_eem/master/informes/eem/07_julio/img/recuperacion_financiero.png?token=AP7VAT2OZ5PXBP3OGFVYRES7EODSM";
+let externoPath = "https://raw.githubusercontent.com/encuestas-macro/procesamiento_eoe_eem/master/informes/eem/07_julio/img/recuperacion_externo.png?token=AP7VAT4UXWYYNGJKK6WXPHC7EODRY";
 
 realButton.onclick = () => {
 graficoSector.src = realPath;
