@@ -5,6 +5,8 @@ output:
   html_document: default
 ---
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 ```{r config, include=FALSE}
 library(dplyr)
@@ -26,7 +28,7 @@ library(ggplot2)
   <div class="title">
   <h2>Banco Central de la República Dominicana<br>
 Encuesta de Expectativas Macroeconómicas</h2>
-<span>Junio 2020</span>
+<span>Julio 2020</span>
   </div>
   
 </div>
@@ -42,7 +44,7 @@ Encuesta de Expectativas Macroeconómicas</h2>
 <!-- Redancción -->
 <div class="left first">
 
-En el mes de julio los analistas esperan que la inflación para el 2020 sea 3.09%, ubicándose así en el límite inferior del rango de meta de inflación de 4% +/- 1%. Las expectativas para este horizonte se mantuvieron desviadas del rango de meta durante mayo y junio, en coherencia con la tendencia deflacionaria observada desde abril.
+En el mes de julio los analistas esperan que la inflación para el 2020 sea 3.09%, ubicándose así en el límite inferior del rango de meta de 4% +/- 1% establecido en el Programa Monetario. Las expectativas para este horizonte se mantuvieron por debajo del rango de meta durante mayo y junio, en coherencia con la menor demanda como resultado de la emergencia sanitaria del COVID-19.
 
 </div>
 
@@ -55,15 +57,17 @@ plt_boxplot_inflacion_diciembre2020
 
 <div class="left secondl">
 
-Por otro lado, para el horizonte de 12 y 24 meses la mediana de las expectativas de inflación se colocan en 3.0% y 4.0%, respectivamente. En ambos horizontes la existencia de valores atípicos sesga positivamente la distribución, resultando en promedios de 3.3% y 4.1%.
+Por otro lado, para los horizontes de 12 y 24 meses, la mediana de las expectativas de inflación se coloca en 3.0% y 4.0%, respectivamente. En ambos horizontes la existencia de valores atípicos sesga positivamente la distribución, resultando en promedios de 3.3% y 4.1%.
 
-Que las expectativas se mantengan ancladas a la meta de inflación en horizontes de más largo plazo denota confianza en la estabilidad macroeconómica a pesar del choque que afronta el país por la pandemia del COVID-19.
+El hecho de que las expectativas se mantengan ancladas a la meta de inflación en horizontes de más largo plazo denota confianza en la estabilidad de precios, a pesar del choque que afronta el país por la pandemia.
+
+La mediana de las expectativas de inflación interanual se mantiene dentro del rango meta para los doce meses subsiguientes a partir de julio 2020, con una mayor dispersión de dichos pronósticos en el segundo trimestre de 2021.
 
 </div>
 
 <div class="right second">
 
-#### Desviación de las expectativas respecto a la meta de inflación
+#### Inflación observada, mediana de las expectativas de inflación interanual e intervalo de probabilidad D2-D8 
 ```{r ptl_desviacion_inflacion, fig.width=5.5, fig.height=3.8}
 ptl_evolucion_mediana_inflacion %>% 
   plotly::config(displayModeBar = F, responsive = TRUE)
@@ -81,7 +85,7 @@ ptl_evolucion_mediana_inflacion %>%
 
 Los analistas esperan que el tipo de cambio cierre el 2020 al RD$60.64 por cada dólar, para una depreciación implícita interanual promedio de 14.5%.
 
-De igual forma, para el final del 2021 y a junio del 2022 la depreciación interanual esperada rondaría el 6.0%, al colocar sus expectativas en 6.8% y 5.6%, respectivamente. Estos resultados sugieren que se reducirán las presiones alcistas del tipo de cambio y que la depreciación retornaría gradualmente al nivel del promedio histórico.
+De igual forma, para el final del 2021 y a junio del 2022 el promedio de la depreciación interanual esperada rondaría el 6.0%, al colocar sus expectativas en 6.8% y 5.6%, respectivamente. Si bien estos resultados van en línea con el promedio histórico de depreciación interanual, muestran un ligero incremento respecto a lo esperado el mes pasado.
 
 </div>
 
@@ -95,7 +99,7 @@ plt_depreciacion %>%
 
 <div class="left second">
 
-En general, los analistas de la Encuesta de Expectativas Macroeconómicas suelen registrar errores de pronósticos relativamente bajos para el tipo de cambio, incluso para el horizonte más largo de 24 meses. La estabilidad relativa de esta variable influye en este sentido, pero igual, con la depreciación reciente que ha experimentado la variable, los errores ha aumentado y hubo un cambio de nivel importante en las expectativas a 12 y 24 meses.
+En general, los analistas de la EEM suelen registrar errores de pronósticos relativamente bajos para el tipo de cambio, incluso para el horizonte más largo de 24 meses. La estabilidad relativa de esta variable influye en este comportamiento, sin embargo, con la depreciación reciente que ha experimentado la variable, los errores se han incrementado y se observa un cambio de nivel importante en las expectativas a 12 y 24 meses.
 
 </div>
 
@@ -116,9 +120,9 @@ plt_expectativas_tc %>%
 <div class="pib-container">
 <div class="left">
 
-En cuanto al crecimiento del PIB, las expectativas mantienen una tendencia negativa en los distintos horizontes. En efecto, en la medición de julio la mediana de las expectativas se colocó en -3.5%, con un mínimo de -5.0% y un máximo de 0.0%.  El proceso de reducción de las expectativas de crecimiento se registró en paralelo con un incremento en la dispersión de los pronósticos, inicialmente, y luego con una reducción de esta.
+En cuanto al crecimiento del PIB, las expectativas muestran un deterioro por quinto mes consecutivo para los distintos horizontes. En efecto, en la medición de julio la mediana de las expectativas se colocó en -3.5%, con un mínimo de -5.0% y un máximo de 0.0%.  El proceso de reducción de las expectativas de crecimiento registró, inicialmente, un incremento en la dispersión de los pronósticos, y luego con una reducción de la misma.
 
-El promedio de las expectativas de crecimiento para el 2021 pasó de 5.1% en enero del 2020 a 4.7% en la medición de julio, para una corrección a la baja producto de los efectos adversos de la pandemia del COVID-19.
+El promedio de las expectativas de crecimiento para el 2021 pasó de 5.1% en enero del 2020 a 4.7% en la medición de julio, una corrección a la baja que resulta de la percepción de que los efectos adversos de la pandemia del COVID-19 tendrán una duración mayor a la originalmente esperada.
 
 </div>
 
@@ -141,7 +145,7 @@ plt_crecimiento_2021
 <div class="pib-container">
 <div class="left">
 
-Las expectativas sobre la Tasa de Política Monetaria reflejan la percepción de que no serán necesarios estímulos monetarios adicionales por parte del Banco Central a través del canal de tasas de interés, pues los analistas esperan que la TPM se mantenga cerca de su nivel actual, con medianas de 3.50% tanto para el cierre del trimestre actual como para final de año.
+Las expectativas sobre la Tasa de Política Monetaria reflejan la percepción de que no serán necesarios estímulos monetarios adicionales por parte del Banco Central a través del canal de tasas de interés. Así, los analistas esperan que la TPM se mantenga cerca de su nivel actual, con una mediana de 3.50% tanto para el cierre del trimestre actual como para final de año.
 
 En los horizontes de 12 y 24 meses las expectativas se distribuyen alrededor de una mediana de 4.0% y 4.5%, respectivamente.
 
@@ -168,45 +172,48 @@ densidad_tpm +
 <div class="covid-container">
 
 
-En las últimas ediciones de la EEM se han incluido preguntas con la finalidad de captar las expectativas de los analistas respecto a la desviación de variables macroeconómicas importantes ante el choque generado por la pandemia del COVID-19. Se preguntó a los participantes sobre la dirección y el tiempo estimado de recuperación de las variables, esperando la mayoría desviaciones coherentes con episodios de desaceleración económica.
+En las últimas ediciones de la EEM se han incluido preguntas con la finalidad de captar las expectativas de los analistas respecto a la desviación de variables macroeconómicas importantes ante el choque generado por la pandemia del COVID-19. Se pregunta a los participantes sobre la dirección y el tiempo estimado de recuperación de las variables, esperando la mayoría desviaciones coherentes con episodios de desaceleración económica.
 
-En general, la llegada mensual de turistas, el desempleo, la inversión y los ingresos fiscales resaltan por ser las variables que más tardarían en retornar a sus niveles previos a la pandemia. Algunas de estas variables con distribuciones bimodales entre 12 y 24 meses para recuperarse.
+En general, la llegada mensual de turistas, el desempleo, la inversión y los ingresos fiscales resaltan por ser las variables que más tardarían en retornar a sus niveles previos a la pandemia.
 
-Por su parte, al evaluar la evolución de los tiempos de recuperación esperados por los analistas, la demanda local de bines y servicios, el desempleo y la liquidez del mercado financiero han registrados correcciones al alza en la mayoría de las mediciones. En el caso del resto de las variables, se nota una estabilidad en el promedio del tiempo de recuperación, y en algunos casos con aumento en la desviación estándar de los pronósticos.
+Por su parte, al evaluar la evolución de los tiempos de recuperación esperados por los analistas, la demanda local de bienes y servicios, el desempleo y la liquidez del mercado financiero han registrado correcciones al alza en la mayoría de las mediciones, lo que reflejaría una mayor duración esperada de los efectos de la pandemia. Para el resto de las variables, se percibe una estabilidad en el tiempo promedio de recuperación y, en algunos casos, aumentos en la desviación estándar de los pronósticos.
 
-
-#### Expectativas: duración y dirección de los desequilibrios provocados por la pandemia
-```{r recuperacion_real, fig.width=10, fig.height=8}
-recuperacion_variables_errorbars
-```
 
 </div>
 
-<!--
-<div class = "button-row">
-<div class = "button" id="real"> Real </div>
-<div class = "button" id="financiero"> Financiero </div>
-<div class = "button" id="externo"> Externo </div>
+<h4 class="covid-dt">Expectativas: duración y dirección de los desequilibrios provocados por la pandemia, según sector</h4>
+
+<div class = "button-row"  align="center">
+<div class = "btn btn-secondary" id="real"> Real </div>
+<div class = "btn btn-secondary" id="financiero"> Financiero </div>
+<div class = "btn btn-secondary" id="externo"> Externo </div>
 </div>
 
-<img id = "covid_sector" src="https://raw.githubusercontent.com/encuestas-macro/imagen_prueba/master/recuperacion_externo.png">
+<img id = "covid_sector" src="./img/recuperacion_real.png">
 
 <script>
-let realButton = document.getElementbyId("real");
-let financieroButton = document.getElementbyId("financiero");
-let externoButton = document.getElementbyId("externo");
+let realButton = document.getElementById("real");
+let financieroButton = document.getElementById("financiero");
+let externoButton = document.getElementById("externo");
 let graficoSector = document.getElementById("covid_sector");
 
-let realPath = "https://github.com/encuestas-macro/imagen_prueba/blob/master/recuperacion_real.png";
-let financieroPath = "https://raw.githubusercontent.com/encuestas-macro/imagen_prueba/master/recuperacion_finaciero.png";
-let externoPath = "https://github.com/encuestas-macro/imagen_prueba/blob/master/recuperacion_externo.png";
+let realPath = "./img/recuperacion_real.png";
+let financieroPath = "./img/recuperacion_financiero.png";
+let externoPath = "./img/recuperacion_externo.png";
 
-const realButton.onclick = () => {
+realButton.onclick = () => {
 graficoSector.src = realPath;
-};
+}
 
+financieroButton.onclick = () => {
+graficoSector.src = financieroPath;
+}
+
+externoButton.onclick = () => {
+graficoSector.src = externoPath;
+}
 </script>
--->
+
 
 
 
